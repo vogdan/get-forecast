@@ -14,12 +14,12 @@ end
   @longitude = longitude
 end
 
-When /^get the forecast$/ do
+Then /^get the forecast$/ do
   @forecast = ForecastIO.forecast(@latitude, @longitude)
   @summary = @forecast.currently.summary
 end
 
-Then /^save forecast if it\'s rainy$/ do
+And /^save forecast if it\'s rainy$/ do
   if @summary == "Rain" then
     File.open("rainy_forcast.json", 'w') {|f| f.write(@forecast) }
   else
