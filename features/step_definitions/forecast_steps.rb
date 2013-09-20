@@ -5,7 +5,11 @@ ForecastIO.configure do |configuration|
   configuration.api_key = 'e26ea8c99939d15c0e037b208ca06df3'
 end
 
-Given /^the input \"(-?[0-9\.]+),(-?[0-9\.]+)\"$/ do |latitude, longitude|
+GET_CRD = Transform /^(-?[0-9\.]+)$/ do |coordinate|
+  coordinate.to_i
+end
+
+  Given /^the location "(#{GET_CRD}),(#{GET_CRD})"$/ do |latitude, longitude|
   @latitude = latitude
   @longitude = longitude
 end
