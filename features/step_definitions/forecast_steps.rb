@@ -9,7 +9,7 @@ GET_CRD = Transform /^(-?[0-9\.]+)$/ do |coordinate|
   coordinate.to_i
 end
 
-  Given /^the location "(#{GET_CRD}),(#{GET_CRD})"$/ do |latitude, longitude|
+  Given /^the "(#{GET_CRD}),(#{GET_CRD})"  latitude and longitude coordinates$/ do |latitude, longitude|
   @latitude = latitude
   @longitude = longitude
 end
