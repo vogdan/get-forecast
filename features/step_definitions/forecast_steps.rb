@@ -14,7 +14,7 @@ end
   @longitude = longitude
 end
 
-When /^getting the forecast$/ do
+When /^get the forecast$/ do
   @forecast = ForecastIO.forecast(@latitude, @longitude)
   @summary = @forecast.currently.summary
 end
